@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  hello-world-springboot:
+    build:
+      context: .
+    ports:
+      - 8080:8080
+    networks:
+      - docker-kata-net
+networks:
+  docker-kata-net:
+    driver: bridge
