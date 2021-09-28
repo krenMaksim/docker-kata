@@ -31,6 +31,9 @@
    1. Add DB container (Postgres SQL)
    1. Set up storing and recovering from back ups
 1. Control of order running containers [FOR CONSIDERATION]
-   1. Set up a case when java app should be shure that DB container is running       
+   1. Set up a case when java app should be shure that DB container is running
+1. Adding monitoring tools [FOR CONSIDERATION]
+   1. Set up solution for ELK
+   1. Set up solution for Graphana metrics    
   
 # 
