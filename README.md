@@ -9,7 +9,7 @@
    1. Best practices for writing Dockerfiles https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
 1. Run java web app (Spring Boot)
    1. Build artifact `$ mvn clean install`
-   1. Build image via `docker build -t docker-kata:latest .`
+   1. Build image via `$ docker build -t docker-kata:latest .`
    1. Run & build the image via docker-compose `$ docker-compose down && docker-compose up --build`
    1. Inspect image via --entrypoint /bin/bash `$ docker  run --rm -it --entrypoint /bin/bash docker-kata_hello-world-springboot:latest`
       1. Run app from it `$ java -cp "java-lib/*:/hello-world-springboot.jar" com.kren.hello.world.MainApp`
@@ -17,11 +17,14 @@
    1. Take notice why third-party dependencies are separated
    1. Take notice how to add user role
       1. See more details in https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#user
-1. Exploring container [FOR CONSIDERATION]
-   1. Connect to a runing container
-   1. Save container logs into file
-   1. Inspect image
+1. Exploring container [IN PROGRESS]
+   1. Connect to a runing container `$ docker container exec -it bold_golick bash`
+   1. Show running PID `$ ps -elf`
+   1. Save container logs into file `$ docker logs bold_golick > log_file.txt`
+   1. Following logs in real time `$ docker logs -f bold_golick`
+   1. Inspect image `$ docker image inspect docker-kata_hello-world-springboot:latest`
    1. Inspect running container
+   1. Show recourses used by container `$ docker stats bold_golick`
    1. How to copy some files into running container  
 1. Advanced run java web app (Spring Boot) [FOR CONSIDERATION]
    1. Create layered jar from Spring Boot fat jar
