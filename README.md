@@ -9,6 +9,7 @@
    1. Best practices for writing Dockerfiles https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
 1. Run java web app (Spring Boot)
    1. Build artifact `$ mvn clean install`
+   1. Build image via `docker build -t docker-kata:latest .`
    1. Run & build the image via docker-compose `$ docker-compose down && docker-compose up --build`
    1. Inspect image via --entrypoint /bin/bash `$ docker  run --rm -it --entrypoint /bin/bash docker-kata_hello-world-springboot:latest`
       1. Run app from it `$ java -cp "java-lib/*:/hello-world-springboot.jar" com.kren.hello.world.MainApp`
