@@ -17,15 +17,15 @@
    1. Take notice why third-party dependencies are separated
    1. Take notice how to add user role
       1. See more details in https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#user
-1. Exploring container [IN PROGRESS]
+1. Exploring container
    1. Connect to a runing container `$ docker container exec -it bold_golick bash`
    1. Show running PID `$ ps -elf`
    1. Save container logs into file `$ docker logs bold_golick > log_file.txt`
    1. Following logs in real time `$ docker logs -f bold_golick`
    1. Inspect image `$ docker image inspect docker-kata_hello-world-springboot:latest`
-   1. Inspect running container
+   1. Inspect running container `$ docker container inspect suspicious_chaum` and `$ docker container diff suspicious_chaum`
    1. Show recourses used by container `$ docker stats bold_golick`
-   1. How to copy some files into running container  
+   1. How to copy some files from|into running container `$ docker cp suspicious_chaum:hello-world-springboot.jar ./` and `$ docker cp ./docker-compose.yml suspicious_chaum:/`
 1. Advanced run java web app (Spring Boot) [FOR CONSIDERATION]
    1. Create layered jar from Spring Boot fat jar
    1. Set up remove debug configuration [might multi-stage be used here?]
