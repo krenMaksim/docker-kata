@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  java-image:
+    image: openjdk:11
+    entrypoint: ["sleep", "infinity"]
+    networks:
+      - java-docker-kata-net
+networks:
+  java-docker-kata-net:
+    driver: bridge

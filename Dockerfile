@@ -11,4 +11,9 @@ EXPOSE 8080
 COPY /target/lib/compile/* /java-lib/
 COPY /target/hello-world-springboot-*.jar /hello-world-springboot.jar
 
-CMD ["java", "--class-path", "java-lib/*:/hello-world-springboot.jar", "-Djava.security.egd=file:/dev/./urandom", "-Xms125m", "-Xmx256m", "com.kren.hello.world.MainApp"]
+ENTRYPOINT exec java \
+                --class-path java-lib/*:/hello-world-springboot.jar \
+                -Djava.security.egd=file:/dev/./urandom \
+                -Xms125m -Xmx256m \
+                com.kren.hello.world.MainApp
+# CMD ["java", "--class-path", "java-lib/*:/hello-world-springboot.jar", "-Djava.security.egd=file:/dev/./urandom", "-Xms125m", "-Xmx256m", "com.kren.hello.world.MainApp"]

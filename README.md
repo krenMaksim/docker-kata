@@ -2,7 +2,7 @@
 --------------------------------------
 #### Steps
 1. Documentation
-   1. Dockerfile reference https://docs.docker.com/engine/reference/builder/#onbuild
+   1. Dockerfile reference https://docs.docker.com/engine/reference/builder/
    1. Compose file version 3 reference https://docs.docker.com/compose/compose-file/compose-file-v3/
    1. docker CLI https://docs.docker.com/engine/reference/run/
    1. docker-compose CLI https://docs.docker.com/compose/reference/
@@ -11,7 +11,7 @@
    1. Build artifact `$ mvn clean install`
    1. Build image via `$ docker build -t docker-kata:latest .`
    1. Run & build the image via docker-compose `$ docker-compose down && docker-compose up --build`
-   1. Inspect image via --entrypoint /bin/bash `$ docker  run --rm -it --entrypoint /bin/bash docker-kata_hello-world-springboot:latest`
+   1. Inspect image via --entrypoint /bin/bash `$ docker run --rm -it --entrypoint /bin/bash docker-kata_hello-world-springboot:latest`
       1. Run app from it `$ java -cp "java-lib/*:/hello-world-springboot.jar" com.kren.hello.world.MainApp`
       1. Try to create a file
    1. Take notice why third-party dependencies are separated
@@ -26,6 +26,11 @@
    1. Inspect running container `$ docker container inspect suspicious_chaum` and `$ docker container diff suspicious_chaum`
    1. Show recourses used by container `$ docker stats bold_golick`
    1. How to copy some files from|into running container `$ docker cp suspicious_chaum:hello-world-springboot.jar ./` and `$ docker cp ./docker-compose.yml suspicious_chaum:/`
+1. Running docker containers indefinitely
+   1. See doc https://www.baeldung.com/ops/running-docker-containers-indefinitely
+   1. In the background `$ docker run --entrypoint /bin/bash docker-kata_hello-world-springboot:latest`
+   1. Via docker-compose `$ docker-compose -f docker-compose-indefinite-run.yml down && docker-compose -f docker-compose-indefinite-run.yml up`
+   1. Connect to running image `$ docker container exec -it docker-kata_java-image_1 bash`
 1. Advanced run java web app (Spring Boot) [FOR CONSIDERATION]
    1. Create layered jar from Spring Boot fat jar
    1. Set up remove debug configuration [might multi-stage be used here?]
