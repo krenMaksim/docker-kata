@@ -45,6 +45,7 @@
    1. Set up a case when java app should be shure that DB container is running
 1. Adding monitoring tools [FOR CONSIDERATION]
    1. Set up solution for ELK
-   1. Set up solution for Graphana metrics    
+   1. Set up solution for Graphana metrics
+1. [Pass Environment Variables From the Host Machine to your Docker Container](https://vsupalov.com/docker-environment-variables-from-host/)
   
 # 
