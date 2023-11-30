@@ -47,5 +47,6 @@
    1. Set up solution for ELK
    1. Set up solution for Graphana metrics
 1. [Pass Environment Variables From the Host Machine to your Docker Container](https://vsupalov.com/docker-environment-variables-from-host/)
+
   
 # 
